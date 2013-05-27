@@ -13,6 +13,11 @@
 		3264D00B1752DB32003DD4BF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3264D0091752DB32003DD4BF /* Credits.rtf */; };
 		3264D00E1752DB32003DD4BF /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264D00D1752DB32003DD4BF /* MMAppDelegate.m */; };
 		3264D0111752DB32003DD4BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3264D00F1752DB32003DD4BF /* MainMenu.xib */; };
+		3264D0191752DDDC003DD4BF /* MMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264D0181752DDDC003DD4BF /* MMModel.m */; };
+		3264D01C1752F692003DD4BF /* MMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264D01B1752F692003DD4BF /* MMMainViewController.m */; };
+		3264D05D17531CD4003DD4BF /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264D05C17531CD4003DD4BF /* GCDAsyncSocket.m */; };
+		3264D05F17531ECE003DD4BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3264D05E17531ECD003DD4BF /* Security.framework */; };
+		3264D07017534E70003DD4BF /* MMCommandProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264D06F17534E70003DD4BF /* MMCommandProcessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,15 @@
 		3264D00C1752DB32003DD4BF /* MMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAppDelegate.h; sourceTree = "<group>"; };
 		3264D00D1752DB32003DD4BF /* MMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAppDelegate.m; sourceTree = "<group>"; };
 		3264D0101752DB32003DD4BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3264D0171752DDDC003DD4BF /* MMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMModel.h; sourceTree = "<group>"; };
+		3264D0181752DDDC003DD4BF /* MMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMModel.m; sourceTree = "<group>"; };
+		3264D01A1752F692003DD4BF /* MMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainViewController.h; sourceTree = "<group>"; };
+		3264D01B1752F692003DD4BF /* MMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMainViewController.m; sourceTree = "<group>"; };
+		3264D05B17531CD4003DD4BF /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		3264D05C17531CD4003DD4BF /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		3264D05E17531ECD003DD4BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3264D06E17534E70003DD4BF /* MMCommandProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCommandProcessor.h; sourceTree = "<group>"; };
+		3264D06F17534E70003DD4BF /* MMCommandProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCommandProcessor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3264D05F17531ECE003DD4BF /* Security.framework in Frameworks */,
 				3264CFFB1752DB32003DD4BF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +78,7 @@
 		3264CFF91752DB32003DD4BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3264D05E17531ECD003DD4BF /* Security.framework */,
 				3264CFFA1752DB32003DD4BF /* Cocoa.framework */,
 				3264CFFC1752DB32003DD4BF /* Other Frameworks */,
 			);
@@ -82,9 +98,15 @@
 		3264D0001752DB32003DD4BF /* MoteMote Server */ = {
 			isa = PBXGroup;
 			children = (
+				3264D00F1752DB32003DD4BF /* MainMenu.xib */,
 				3264D00C1752DB32003DD4BF /* MMAppDelegate.h */,
 				3264D00D1752DB32003DD4BF /* MMAppDelegate.m */,
-				3264D00F1752DB32003DD4BF /* MainMenu.xib */,
+				3264D0171752DDDC003DD4BF /* MMModel.h */,
+				3264D0181752DDDC003DD4BF /* MMModel.m */,
+				3264D06E17534E70003DD4BF /* MMCommandProcessor.h */,
+				3264D06F17534E70003DD4BF /* MMCommandProcessor.m */,
+				3264D0601753202A003DD4BF /* Controllers */,
+				3264D0611753203B003DD4BF /* TCP */,
 				3264D0011752DB32003DD4BF /* Supporting Files */,
 			);
 			path = "MoteMote Server";
@@ -100,6 +122,24 @@
 				3264D0091752DB32003DD4BF /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3264D0601753202A003DD4BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3264D01A1752F692003DD4BF /* MMMainViewController.h */,
+				3264D01B1752F692003DD4BF /* MMMainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3264D0611753203B003DD4BF /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				3264D05B17531CD4003DD4BF /* GCDAsyncSocket.h */,
+				3264D05C17531CD4003DD4BF /* GCDAsyncSocket.m */,
+			);
+			name = TCP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +209,10 @@
 			files = (
 				3264D0071752DB32003DD4BF /* main.m in Sources */,
 				3264D00E1752DB32003DD4BF /* MMAppDelegate.m in Sources */,
+				3264D0191752DDDC003DD4BF /* MMModel.m in Sources */,
+				3264D01C1752F692003DD4BF /* MMMainViewController.m in Sources */,
+				3264D05D17531CD4003DD4BF /* GCDAsyncSocket.m in Sources */,
+				3264D07017534E70003DD4BF /* MMCommandProcessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +348,7 @@
 				3264D0161752DB32003DD4BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

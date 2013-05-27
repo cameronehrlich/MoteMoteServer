@@ -1,5 +1,5 @@
 //
-//  MMAppDelegate.h
+//  MMMainViewController.h
 //  MoteMote Server
 //
 //  Created by Cameron Ehrlich on 5/26/13.
@@ -7,10 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MMModel.h"
 
-@interface MMAppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
+@interface MMMainViewController : NSViewController
+@property (strong) IBOutlet NSTextView *textView;
 
 @end
