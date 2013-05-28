@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
 
+#define DATA_LENGTH 200
+
 @interface MMModel : NSObject <NSNetServiceDelegate> {
 	NSNetService *netService;
 	GCDAsyncSocket *asyncSocket;

@@ -9,8 +9,6 @@
 #import "MMModel.h"
 #import "MMCommandProcessor.h"
 
-#define DATA_LENGTH 30
-
 @implementation MMModel
 
 + (id)sharedModel {
@@ -44,11 +42,8 @@
 
 
 - (void) processCommand: (NSData *) data {
-    NSData *strData = [data subdataWithRange:NSMakeRange(0, [data length] - 2)];
-    NSString *msg = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
-    
-    [MMCommandProcessor send:msg];
-    [self logNotification:msg];
+    [MMCommandProcessor process:data];
+    [self logNotification:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
 }
 
 - (void) logNotification: (NSString *) string {

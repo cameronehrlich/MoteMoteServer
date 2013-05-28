@@ -10,6 +10,6 @@
 
 @interface MMCommandProcessor : NSObject
 
-+ (void) send: (NSString *) input;
++ (void) process: (NSData *) input;
 
 @end

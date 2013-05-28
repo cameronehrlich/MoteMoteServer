@@ -10,24 +10,19 @@
 
 @implementation MMCommandProcessor
 
-+ (void) send: (NSString *) input {
-    NSString *command = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
++ (void) process: (NSData *) input {
+    NSData *jsonData = [[[NSString alloc] initWithData:input encoding:NSUTF8StringEncoding] dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    if (error) {NSLog(@"%@", error);}
+    NSLog(@"%@", parsedData.description);
     
-    if ([command isEqualToString:@"Play"]) {
-        [self play];
-    }
-    if ([command isEqualToString:@"Pause"]) {
-        [self pause];
-    }
-    if ([command isEqualToString:@"Playpause"]) {
-        [self playpause];
-    }
-    if ([command isEqualToString:@"Prev"]) {
-        [self previous];
-    }
-    if ([command isEqualToString:@"Next"]) {
-        [self next];
-    }
+    // Contruct Command and run it
+    NSString *application = [parsedData objectForKey:@"application"];
+    NSString *command = [parsedData objectForKey:@"command"];
+    NSString *constructedCommand = [NSString stringWithFormat:@"tell application \"%@\" to %@", application, command];
+    
+    [self runAppleScript:constructedCommand];
 }
 
 + (void) runAppleScript: (NSString *)appleScript {
@@ -35,29 +30,4 @@
     [script executeAndReturnError:nil];
 }
 
-
-+ (void) play {
-
-    [self runAppleScript:@"tell application \"Spotify\" to play"];
-}
-
-+ (void) pause {
-
-    [self runAppleScript:@"tell application \"Spotify\" to pause"];
-}
-
-+ (void) playpause {
-
-    [self runAppleScript:@"tell application \"Spotify\" to playpause"];
-}
-
-+ (void) previous {
-    
-    [self runAppleScript:@"tell application \"Spotify\" to previous track"];
-}
-
-+ (void) next {
-    
-    [self runAppleScript:@"tell application \"Spotify\" to next track"];
-}
 @end
