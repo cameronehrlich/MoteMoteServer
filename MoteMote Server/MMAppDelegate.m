@@ -13,6 +13,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [MMModel sharedModel];
+    CGDisplayMoveCursorToPoint (kCGDirectMainDisplay, CGPointZero);
 }
 
 @end

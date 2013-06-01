@@ -10,6 +10,6 @@
 
 @interface MMCommandProcessor : NSObject
 
-+ (void) process: (NSData *) input;
++ (NSString *) executeAppleScriptFromString:(NSString *) scriptString;
 
 @end
